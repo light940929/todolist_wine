@@ -1,26 +1,29 @@
 # To Do List
 
-There are  RESTful API and  UI for the simple To Do List.
+There are  RESTful API with Https and UI for the simple To Do List.
+
 This project is done using SLIM PHP Micro Framework + Apache + PHP + PHPUnit + MySQL + JQuery + Ajax + HTML + CSS.
 
 
 ## Configuration
 
 Database: "db/todolist_wine.sql"<br>
+
 MySQL-PHP connection: "include/config.php"<br>
+
 Pre-requisites: LAMP Server (Ubuntu14.04, Apache2, MySQL5, PHP5)<br>
 
 ### Docker To Build
 
 ``` bash
-$ docker build -t todolist_wine .
+$ docker build -t todolist_wine 
 ```
 
 ### Docker To Run
 
 ``` bash
 # run docker apache php
-$ CONTAINER=$(docker run -d -p 80 -p 3306 -v /your/path/to/serve:/var/www/html todolist_wine)
+$ CONTAINER=$(docker run -d -p 80 -p 3306 -v /your/path/to/server:/var/www/html todolist_wine)
 # get the http port
 $ docker port $CONTAINER 80
 0.0.0.0:49206
