@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="../libs/Bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../libs/font-awesome-4.2.0/css/font-awesome.min.css">
+<script src="../libs/JQuery/jquery-1.7.1.min.js"></script>
+<script src="../libs/jquery-validation-1.13.1/dist/jquery.validate.min.js"></script>
+<head>
+<title>To Do List</title>
+</head>
+<body>
+<div class="container">
+<h1 class="text-center">To Do List</h1>
+<div class="jquery-script-ads text-center">
+<script type="text/javascript">
+</script>
+</div>
+<form class="form-horizontal" method='POST' id='post_register'>
+  <fieldset>
+    
+    
+     <!-- Text input Name-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="Name">Name</label>
+      <div class="col-md-3">
+        <div class="input-group"> <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+          <input id="name" name="name" type="text" placeholder="Enter Your Name" class="form-control input-md" required>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!-- Text input Email-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="Email">Email</label>
+      <div class="col-md-3">
+        <div class="input-group"> <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+          <input id="email" name="email" type="text" placeholder="Enter Your Email" class="form-control input-md" required>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Password input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="Password">Password</label>
+      <div class="col-md-3">
+        <div class="input-group"> <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+          <input id="password" name="password" type="password" placeholder="Enter Your Password" class="form-control input-md" required>
+        </div>
+      </div>
+    </div>
+    
+
+     <!-- Button  register-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="Register"></label>
+      <div class="col-md-4">
+        <input id="btnRegister" name="register" class="btn btn-success" type ="button"  value="Register"></input>
+      </div>
+    </div>
+
+     <?php include 'footer.php';?>
+  </fieldset>
+</form>
+</div>
+
+
+
+<div class="mainArea">
+<script src="../libs/JQuery/jquery-1.7.1.min.js"></script>
+<script src="../js/register.js"></script>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+<link rel="stylesheet" href="../libs/Bootstrap/css/bootstrap.min.css">
+<script src="../libs/JQuery/jquery-1.7.1.min.js"></script>
+<head>
+<title>To Do List</title>
+<link rel="stylesheet" href=".././css/styles.css" />
+
+
+</head>
+
+<body>
+
+<div class="container">
+<h1 class="text-center">To Do List</h1>
+</div>
+
+<!-- 
+<div class="leftArea">
+	 
+ <ul id="categoryList"></ul> 
+
+</div>
+ -->
+
+<form id="categoryForm">
+
+
+<div class="leftArea">
+
+<div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-list"></span>List                   
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group" id="list"></ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+ 
+<div class="rightArea">
+
+<!-- <label>Id:</label>   -->
+
+<input type="hidden" type="text" id="categoryId" name="categoryid" disabled />
+
+<label>Name:</label>
+<input type="text" id="categoryName" name="categoryname" required>
+<input type="hidden" id="categoryStatus" name="categorystatus" >
+
+
+</div>
+ 
+<div class="right2Area">
+	
+ <input id="btnUpdate" name="btnUpdate" class="btn btn-success" type ="button" value="Update"></input> 
+ <input id="btnDelete" name="btnDelete" class="btn btn-success" type ="button" value="Delete"></input>
+ <input id="btnAdd" name="btnAdd" class="btn btn-success" type ="button" value="New List"></input>
+
+</div>
+ 
+ 
+  <!-- Button logout -->
+    <div class="rightTopArea">
+        <!-- <a href="logout.html">Logout</a> -->
+        <script src="../js/login.js"></script>
+        <button id="btnLogout" name="logout" class="btn btn-success" type="button" onclick="logoutUser();">Log out</button>      
+    </div>
+    
+    
+    <div class="mainArea">
+		<script src="../libs/JQuery/jquery-1.7.1.min.js"></script>
+		<script src="../libs/JQuery/jquery.cookie.js"></script>
+		<script src="../js/mainList.js"></script>
+	</div>
+
+</form>
+
+
+
+
+
+</body>
+</html>
