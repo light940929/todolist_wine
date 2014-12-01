@@ -32,15 +32,17 @@ $ docker port $CONTAINER 80
 $ docker port $CONTAINER 3306
 0.0.0.0:49205
 $ mysql -hdockerhost -uroot -P 49205
+```
 
-
-##Testing Restful API
-
-Command Line:  phpunit tests/api/v1/apiTest.php<br>
+###Testing Restful API
+``` bash
+ phpunit tests/api/v1/apiTest.php
+ 
+```
 Chrome:  Advanced REST client extension (Postman)<br>
 
-##Request
-
+###Request
+--------
 <table>
  <tr>
    <th>URL</th>
