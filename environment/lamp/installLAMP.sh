@@ -38,12 +38,13 @@ rm -f $tfile
 /usr/local/bin/supervisord -n
 
 # install todolist_wine
-#git config --global user.name "Hannah Lin"
-#git config --global user.email "light940929@gmail.com"
-#git clone https://github.com/light940929/todolist_wine.git
+git config --global user.name "Hannah Lin"
+git config --global user.email "light940929@gmail.com"
+cd /var/www/html
+git clone https://github.com/light940929/todolist_wine.git
 
 # install todolist_wine DB
-mysql -r root todolist_wine < ~/todolist_wine/db/todolist_wine1127.sql
+mysql -r root todolist_wine < var/www/html/todolist_wine/db/todolist_wine1127.sql
 
 
 

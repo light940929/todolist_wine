@@ -22,8 +22,8 @@ RUN apt-get install -y  phpunit
 RUN apt-get install -y  git 
 
 # mysql config
-ADD ~/todolist_wine/environment/lamp/my.cnf /etc/mysql/conf.d/my.cnf
-RUN chmod 664 /etc/mysql/conf.d/my.cnf
+#ADD my.cnf /etc/mysql/conf.d/my.cnf
+#RUN chmod 664 /etc/mysql/conf.d/my.cnf
 
 # apache config
 ENV APACHE_RUN_USER ubuntu
@@ -40,10 +40,10 @@ RUN sed -i -e "s/short_open_tag\s*=\s*Off/short_open_tag = On/g" /etc/php5/apach
 RUN /usr/sbin/php5enmod mcrypt
 
 # Supervisor Config
-RUN mkdir /var/log/supervisor/
-RUN /usr/bin/easy_install supervisor
-RUN /usr/bin/easy_install supervisor-stdout
-ADD ./supervisord.conf /etc/supervisord.conf
+#RUN mkdir /var/log/supervisor/
+#RUN /usr/bin/easy_install supervisor
+#RUN /usr/bin/easy_install supervisor-stdout
+#ADD ./supervisord.conf /etc/supervisord.conf
 
 # Initialization Startup Script
 ADD ./installLAMP.sh /installLAMP.sh
