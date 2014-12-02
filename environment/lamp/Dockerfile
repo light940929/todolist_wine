@@ -22,14 +22,14 @@ RUN apt-get install -y  phpunit
 RUN apt-get install -y  git 
 
 # mysql config
-ADD my.cnf /etc/mysql/conf.d/my.cnf
+ADD ~/todolist_wine/environment/lamp/my.cnf /etc/mysql/conf.d/my.cnf
 RUN chmod 664 /etc/mysql/conf.d/my.cnf
 
 # apache config
-ENV APACHE_RUN_USER hanjenlin
-ENV APACHE_RUN_GROUP hanjenlin
+ENV APACHE_RUN_USER ubuntu
+ENV APACHE_RUN_GROUP ubuntu
 ENV APACHE_LOG_DIR /var/log/apache2
-RUN chown -R hanjenlin:hanjenlin /var/www/
+RUN chown -R ubuntu:ubuntu /var/www/
 
 # php config
 RUN sed -i -e "s/upload_max_filesize\s*=\s*2M/upload_max_filesize = 100M/g" /etc/php5/apache2/php.ini
