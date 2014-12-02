@@ -43,7 +43,7 @@ rm -f $tfile
 #git clone https://github.com/light940929/todolist_wine.git
 
 # install todolist_wine DB
-mysql -r root todolist_wine < cd ~/todolist_wine/db/todolist_wine1127.sql
+mysql -r root todolist_wine < ~/todolist_wine/db/todolist_wine1127.sql
 
 
 
