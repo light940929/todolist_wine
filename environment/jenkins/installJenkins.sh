@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 # install Jenkins
 
 # if `docker run` first argument start with `--` the user is passing jenkins launcher arguments
