@@ -18,6 +18,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install php5-curl php5-gd php5-int
 # Install phpunit
 RUN aptitude install -y -f phpunit 
 
+# Install git
+RUN apt-get install -y -f git 
+
 # mysql config
 ADD my.cnf /etc/mysql/conf.d/my.cnf
 RUN chmod 664 /etc/mysql/conf.d/my.cnf
