@@ -26,10 +26,10 @@ RUN apt-get install -y  git
 #RUN chmod 664 /etc/mysql/conf.d/my.cnf
 
 # apache config
-ENV APACHE_RUN_USER ubuntu
-ENV APACHE_RUN_GROUP ubuntu
-ENV APACHE_LOG_DIR /var/log/apache2
-RUN chown -R ubuntu:ubuntu /var/www/
+#ENV APACHE_RUN_USER ubuntu
+#ENV APACHE_RUN_GROUP ubuntu
+#ENV APACHE_LOG_DIR /var/log/apache2
+#RUN chown -R ubuntu:ubuntu /var/www/
 
 # php config
 RUN sed -i -e "s/upload_max_filesize\s*=\s*2M/upload_max_filesize = 100M/g" /etc/php5/apache2/php.ini
