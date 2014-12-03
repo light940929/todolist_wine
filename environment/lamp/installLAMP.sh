@@ -36,7 +36,7 @@ rm -f $tfile
 
 # start all the services
 #/usr/local/bin/supervisord -n
-restart mysql
+#restart mysql
 service apache2 restart
 
 # install todolist_wine
