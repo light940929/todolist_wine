@@ -35,7 +35,9 @@ fi
 rm -f $tfile
 
 # start all the services
-/usr/local/bin/supervisord -n
+#/usr/local/bin/supervisord -n
+restart mysql
+service apache2 restart
 
 # install todolist_wine
 git config --global user.name "Hannah Lin"
@@ -44,7 +46,8 @@ cd /var/www/html
 git clone https://github.com/light940929/todolist_wine.git
 
 # install todolist_wine DB
-mysql -r root todolist_wine < /var/www/html/todolist_wine/db/todolist_wine1127.sql
+mysql -uroot -e "CREATE DATABASE todolist_wine"
+mysql -uroot todolist_wine < /var/www/html/todolist_wine/db/todolist_wine1127.sql
 
 
 
