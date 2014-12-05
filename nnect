@@ -1,8 +1,0 @@
---2014-12-05 10:36:51--  http://openssl/
-Resolving openssl... failed: nodename nor servname provided, or not known.
-wget: unable to resolve host address 'openssl'
---2014-12-05 10:36:51--  http://s_client/
-Resolving s_client... failed: nodename nor servname provided, or not known.
-wget: unable to resolve host address 's_client'
---2014-12-05 10:36:51--  http://192.168.59.103:443/
-Connecting to 192.168.59.103:443... failed: Connection refused.
