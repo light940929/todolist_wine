@@ -51,7 +51,7 @@ RUN chmod 0400 /etc/ssl/private/faq.ca.key
 RUN mkdir /etc/apache2/ssl
 RUN openssl req -x509 -nodes -subj "/C=TW/ST=Denial/L=Springfield/O=Dis/CN=www.wis.com" -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
 RUN rm -rf  /etc/apache2/sites-available/default-ssl.conf
-RUN cp /var/www/html/todolist_wine/envionment/lamp/default-ssl.conf   /etc/apache2/sites-available/ 
+RUN cp todolist_wine/environment/lamp/default-ssl.conf   /etc/apache2/sites-available/ 
 RUN a2ensite default-ssl.conf && service apache2 restart
 
 
