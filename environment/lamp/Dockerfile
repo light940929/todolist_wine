@@ -33,6 +33,13 @@ RUN /usr/sbin/php5enmod mcrypt
 #ADD ./installLAMP.sh /installLAMP.sh
 #RUN chmod 755 /installLAMP.sh
 
+
+# Install todolist_wine
+RUN git config --global user.name "Hannah Lin"
+RUN git config --global user.email "light940929@gmail.com"
+RUN git clone https://github.com/light940929/todolist_wine.git 
+RUN cp -R todolist_wine /var/www/html/
+
 # Set https CA
 RUN openssl genrsa -des3  -passout pass:123  -out /etc/ssl/private/faq.ca.key 1024
 RUN chmod og-rwx /etc/ssl/private/faq.ca.key
@@ -41,18 +48,12 @@ RUN openssl x509 -req -days 7305 -sha1 \-extfile /etc/ssl/openssl.cnf -extension
 RUN rm -f /tmp/faq.ca.req
 RUN chmod 0400 /etc/ssl/private/faq.ca.key
 
-#RUN openssl genrsa -out /etc/ssl/private/blog.faq-book.com.key 1024
-#RUN chmod og-rwx /etc/ssl/private/blog.faq-book.com.key
-#RUN openssl req -new -nodes  -subj "/C=TW/ST=Denial/L=Springfield/O=Dis/CN=www.wis.com"   -key /etc/ssl/private/blog.faq-book.com.key -out /tmp/blog.faq-book.com.req
-#RUN openssl x509 -req -days 3650 -sha1 \-extfile /etc/ssl/openssl.cnf -extensions v3_req \-CA /etc/ssl/certs/faq.ca.crt -CAkey /etc/ssl/private/faq.ca.key \-CAserial /etc/ssl/faq.ca.srl -CAcreateserial \-in /tmp/blog.faq-book.com.req -out /etc/ssl/certs/bolg.faq-book.com.crt
-#RUN rm -f /tmp/blog.faq-book.com.req
-#RUN chmod 0400 /etc/ssl/private/blog.faq-book.com.key
+RUN mkdir /etc/apache2/ssl
+RUN openssl req -x509 -nodes -subj "/C=TW/ST=Denial/L=Springfield/O=Dis/CN=www.wis.com" -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
+RUN rm -rf  /etc/apache2/sites-available/default-ssl.conf
+RUN cp /var/www/html/todolist_wine/envionment/lamp/default-ssl.conf   /etc/apache2/sites-available/ 
+RUN a2ensite default-ssl.conf && service apache2 restart
 
-# Install todolist_wine
-RUN git config --global user.name "Hannah Lin"
-RUN git config --global user.email "light940929@gmail.com"
-RUN git clone https://github.com/light940929/todolist_wine.git 
-RUN cp -R todolist_wine /var/www/html/
 
 # Install todolist_wine DB
 RUN service mysql restart && mysql -uroot -e "CREATE DATABASE todolist_wine" && mysql -uroot todolist_wine < /var/www/html/todolist_wine/db/todolist_wine1127.sql
