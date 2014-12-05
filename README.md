@@ -17,7 +17,7 @@ Pre-requisites: LAMP Server (Ubuntu14.04, Apache2, MySQL5, PHP5)<br>
 
 ``` bash
 $ cd ~/todolist_wine/environment/todolistv1/
-$ docker build -t todolist_wine . 
+$ docker build -t todolistv1 . 
 ```
 
 ### Docker To run apache(http/https)
