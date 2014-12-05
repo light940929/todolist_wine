@@ -3,4 +3,4 @@ MAINTAINER HannahLin
 
 CMD service msyql restart; \ 
     service apache2 restart; \ 
-    /bin/bash -c
+    /usr/sbin/sshd -D
