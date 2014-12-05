@@ -55,6 +55,12 @@ border: 0;
 	right:0;
 	width:200px;
 }
+.rightTop2Area {
+        position: absolute;
+        top:0;
+        right:0;
+        width:280px;
+}
 
 ul {
 	list-style-type: none;
